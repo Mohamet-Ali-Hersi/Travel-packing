@@ -44,25 +44,25 @@ const PackingList = () => {
   return (
     <div>
      
-      <div className="mt-4 flex space-x-2">
+      <div className="mt-4 flex  space-x-2 mx-auto">
         <input
           type="text"
           value={task}
           onChange={(e) => setTask(e.target.value)}
-          placeholder="Add a new task"
-          className="w-full p-2 border border-gray-300 rounded"
+          placeholder="Add item"
+          className="w-3/4 p-2 border border-gray-300 rounded"
         />
-        <button onClick={handleAddTask} className="bg-blue-600 text-white p-2 rounded">Add</button>
+        <button onClick={handleAddTask} className="bg-blue-600 text-white p-4 rounded">Add</button>
       </div>
       <ul className="mt-4">
         {tasks.map((task) => (
-          <li key={task.id} className="flex justify-between items-center p-2 border-b border-gray-300">
+          <li key={task.id} className="flex justify-between items-center  border-b border-gray-300 bg-blue-500 text-white p-4 w-4/5">
             <span className={`${task.completed ? "line-through" : ""}`}>{task.text}</span>
             <div className="flex space-x-2">
-              <button onClick={() => handleUpdateTask(task.id, !task.completed)} className="text-blue-600">
+              <button onClick={() => handleUpdateTask(task.id, !task.completed)} className="bg-green-600 p-2 rounded">
                 {task.completed ? "Undo" : "Complete"}
               </button>
-              <button onClick={() => handleDeleteTask(task.id)} className="text-red-600">Delete</button>
+              <button onClick={() => handleDeleteTask(task.id)} className="bg-red-600 p-2 rounded">Delete</button>
             </div>
           </li>
         ))}

@@ -11,7 +11,7 @@ const Home = () => {
       {user ? (
         <PackingList />
       ) : (
-        <p className="mt-4">Please sign in to manage your tasks❕</p>
+        <p className="mt-4">Please sign in to manage your list❕</p>
       )}
     </div>
   );
