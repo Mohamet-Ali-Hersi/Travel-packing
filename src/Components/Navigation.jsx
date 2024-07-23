@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
-
+// Navbar component displays the navigation bar with links and handles user authentication state
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);// State to handle the visibility of the mobile menu
   const { user, logout } = useAuth();
+  
 
   return (
     <nav className="bg-blue-500 p-4">
